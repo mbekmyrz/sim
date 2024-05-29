@@ -6,9 +6,9 @@ Verilog Simulation Scripts: xsim, verilator, icarus verilog
 ```
 git clone https://github.com/mbekmyrz/sim.git
 ```
-1. Copy your Verilog source files into this repo.
-2. Fill in `src.f` with the names of your Verilog source files.
-3. Specify your testbench module name along with make rule:
+2. Copy your Verilog source files into this repo.
+3. Fill in `src.f` with the names of your Verilog source files.
+4. Specify your testbench module name along with make rule:
 
 For xsim:
 ```
