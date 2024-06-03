@@ -2,10 +2,11 @@
 
 module example ();
 
-reg [3:0] counter = 0;
+reg [3:0] counter;
 
 integer i;
 initial begin
+    counter = 0;
     for (i = 0; i < 10; i++) begin
         #10;
         counter = counter + 1;
@@ -20,3 +21,4 @@ always @(counter) begin
 end
     
 endmodule
+

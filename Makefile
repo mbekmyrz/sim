@@ -12,6 +12,7 @@ IVFLAGS := -g2005 -Wall
 
 ifeq (${TIMING}, 1)
 VFLAGS += --timing
+CFLAGS += -CFLAGS -fcoroutines
 else
 VFLAGS += --no-timing
 endif
