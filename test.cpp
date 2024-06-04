@@ -1,19 +1,22 @@
 #include <memory>
 #include <iostream>
 #include <verilated.h>
-#ifdef TRACE
+#if VM_TRACE_VCD
 #include "verilated_vcd_c.h"
+#endif
+#if VM_TRACE_FST
+#include "verilated_fst_c.h"
 #endif
 #include <Vtop.h>
 
 
-constexpr vluint64_t maxtime = 10e10;
+constexpr vluint64_t maxtime = 1e10;
 
 int main(int argc, char* argv[]) {
     const std::unique_ptr<VerilatedContext> contextp{new VerilatedContext};
 
     contextp->debug(0);
-#ifdef TRACE
+#if VM_TRACE
     contextp->traceEverOn(true);
 #else
     contextp->traceEverOn(false);

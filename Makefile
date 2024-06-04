@@ -1,5 +1,5 @@
 SRC = $(shell cat src.f)
-TB :=
+TB ?= example
 GUI ?= 0
 TRACE ?= 0
 TIMING ?= 1
@@ -32,11 +32,6 @@ endif
 ifeq (${SRC},)
 $(error src.f is empty. Please fill it with Verilog source file names before running make)
 endif
-
-ifeq (${TB},)
-$(error TB variable is not specified. Please specify TB=<value>, where <value> is the name of your testbench, e.g., make xsim TB=example)
-endif
-
 
 xsim: ${SRC}
 	echo "set GUI ${GUI}" > args.tcl
@@ -75,4 +70,4 @@ clean:
 	rm -rf test args.tcl *.jou *.log *.str *.wdb *.pb
 
 make reallyclean:
-	rm -rf *.vcd
+	rm -rf *.vcd *.fst
