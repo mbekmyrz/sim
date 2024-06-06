@@ -20,7 +20,6 @@ endif
 ifeq (${TRACE}, 1)
 VFLAGS += --trace
 VFLAGS += -DTRACE
-CFLAGS := -CFLAGS -DTRACE
 XVFLAGS += -d TRACE
 IVFLAGS += -DTRACE
 endif
