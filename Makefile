@@ -32,6 +32,10 @@ ifeq (${SRC},)
 $(error src.f is empty. Please fill it with Verilog source file names before running make)
 endif
 
+# VFLAGS += -Wno-LATCH
+# VFLAGS += -Wno-INITIALDLY
+# VFLAGS += -Wno-CASEINCOMPLETE
+
 xsim: ${SRC}
 	echo "set GUI ${GUI}" > args.tcl
 	xvlog -d TESTBENCH=${TB} ${XVFLAGS} -sv top.v ${SRC}
