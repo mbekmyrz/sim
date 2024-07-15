@@ -35,6 +35,10 @@ endif
 # VFLAGS += -Wno-LATCH
 # VFLAGS += -Wno-INITIALDLY
 # VFLAGS += -Wno-CASEINCOMPLETE
+# VFLAGS += -Wno-BLKANDNBLK
+# VFLAGS += -Wno-MULTIDRIVEN
+
+# IVFLAGS += -Wno-timescale
 
 xsim: ${SRC}
 	echo "set GUI ${GUI}" > args.tcl
